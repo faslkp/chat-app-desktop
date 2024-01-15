@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import SideNav from '../includes/SideNav'
 import LeftPane from '../includes/LeftPane'
 import ChatPane from '../includes/ChatPane'
+import RightPane from '../includes/RightPane'
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
         <SideNav />
         <LeftPane />
         <ChatPane />
+        <RightPane />
     </HomeContainer>
   )
 }

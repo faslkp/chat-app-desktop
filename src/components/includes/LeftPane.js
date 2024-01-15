@@ -180,121 +180,6 @@ function LeftPane() {
                     <LastMsgTime>10:30 am</LastMsgTime>
                 </ChatRight>
             </Chat>
-            <Chat>
-                <ChatLeft>
-                    <ChatImageContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ChatImageContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
-            <Chat>
-                <ChatLeft>
-                    <ChatImageContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ChatImageContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
-            <Chat>
-                <ChatLeft>
-                    <ImgContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ImgContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
-            <Chat>
-                <ChatLeft>
-                    <ImgContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ImgContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
-            <Chat>
-                <ChatLeft>
-                    <ImgContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ImgContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
         </DivChatList>
     </LeftPaneContainer>
   )
@@ -316,9 +201,9 @@ const DivUser = styled.div`
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #4d4d4d;
-    height: 15vh;
+    height: 60px;
     max-height: 80px;
-    min-height: 70px;
+    min-height: 60px;
     padding: 15px;
 `
 const DivTopLeft = styled.div`
