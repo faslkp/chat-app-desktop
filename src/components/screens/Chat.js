@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import SideNav from '../includes/SideNav'
 import LeftPane from '../includes/LeftPane'
 import RightPane from '../includes/RightPane'
-import WelcomePane from '../includes/WelcomePane'
+import ChatPane from '../includes/ChatPane'
 
-function Home() {
+function Chat() {
   return (
     <HomeContainer>
         <SideNav />
         <LeftPane />
-        <WelcomePane />
+        <ChatPane />
     </HomeContainer>
   )
 }
@@ -21,4 +21,4 @@ const HomeContainer = styled.div`
     max-height: 100vh;
 `
 
-export default Home
+export default Chat

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 function RightPane() {
@@ -6,15 +7,17 @@ function RightPane() {
     <LeftPaneContainer>
         <DivTop>
             <DivTopLeft>Contact details</DivTopLeft>
-            <DivTopRight>
-                <DivTopRightImg
-                    src={require("../assets/images/Vector.svg").default}
-                />
-            </DivTopRight>
+            <Link to={"/chat/1"}>
+                <DivTopRight>
+                    <DivTopRightImg
+                        src={require("../assets/images/Vector.svg").default}
+                    />
+                </DivTopRight>
+            </Link>
         </DivTop>
         <DivBuddy>
             <DpImgContainer style={{backgroundColor: "#48A5C3"}} >
-                <DpImg src={require("../assets/images/Property 1=Image 22.png")} />
+                <DpImg src={require("../assets/images/Profile (11).jpg")} />
             </DpImgContainer>
             <BuddyName>Fasalu Rahman</BuddyName>
             <BuddyStatus>Online</BuddyStatus>

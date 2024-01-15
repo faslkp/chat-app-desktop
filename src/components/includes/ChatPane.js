@@ -1,21 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 function ChatPane() {
   return (
     <ChatPaneWrapper>
         <ChatPaneTop>
-            <ChatPaneTopLeft>
-                <ChatPaneTopLeftImgBox>
-                    <ChatPaneTopLeftImg
-                        src={require("../assets/images/Profile (11).jpg")}
-                    />
-                </ChatPaneTopLeftImgBox>
-                <ChatPaneTopLeftMidBox>
-                    <ChatBuddyName>Michael</ChatBuddyName>
-                    <ChatBuddyStatus>Typing...</ChatBuddyStatus>
-                </ChatPaneTopLeftMidBox>
-            </ChatPaneTopLeft>
+            <Link to={"/chat/1/profile"}>
+                <ChatPaneTopLeft>
+                    <ChatPaneTopLeftImgBox>
+                        <ChatPaneTopLeftImg
+                            src={require("../assets/images/Profile (11).jpg")}
+                        />
+                    </ChatPaneTopLeftImgBox>
+                    <ChatPaneTopLeftMidBox>
+                        <ChatBuddyName>Michael</ChatBuddyName>
+                        <ChatBuddyStatus>Typing...</ChatBuddyStatus>
+                    </ChatPaneTopLeftMidBox>
+                </ChatPaneTopLeft>
+            </Link>
             <ChatPaneTopRight>
                 <ChatPaneTopRightImgBox>
                     <ChatPaneTopRightImg
@@ -27,11 +30,13 @@ function ChatPane() {
                         src={require("../assets/images/Property 1=video-camera.svg").default}
                     />
                 </ChatPaneTopRightImgBox>
-                <ChatPaneTopRightImgBox>
-                    <ChatPaneTopRightImg
-                        src={require("../assets/images/Option.svg").default}
-                    />
-                </ChatPaneTopRightImgBox>
+                <Link to={"/chat/1/profile"}>
+                    <ChatPaneTopRightImgBox>
+                        <ChatPaneTopRightImg
+                            src={require("../assets/images/Option.svg").default}
+                        />
+                    </ChatPaneTopRightImgBox>
+                </Link>
             </ChatPaneTopRight>
         </ChatPaneTop>
         <ChatPaneMiddle>
@@ -198,7 +203,7 @@ const ChatPaneMiddle = styled.div`
 const MessageIn = styled.div`
     display: flex;
     margin-bottom: 15px;
-    :last-child {
+    &:last-child {
         margin-bottom: 0;
     }
 `

@@ -1,187 +1,98 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 function LeftPane() {
-  return (
-    <LeftPaneContainer>
-        <DivUser>
-            <DivTopLeft>
-                <ImgContainer style={{backgroundColor: "#48A5C3"}} >
-                    <Img src={require("../assets/images/Property 1=Image 22.png")} />
-                </ImgContainer>
-                <DivTopContent>
-                    <UserName>Fasalu Rahman</UserName>
-                    <UserDesc>My Account</UserDesc>
-                </DivTopContent>
-            </DivTopLeft>
-            <DivTopRight>
-                <ImgContainer style={{border: "1px solid #4d4d4d"}} >
-                    <Img
-                        src={require("../assets/images/Option.svg").default}
-                        style={{width:"30px"}}
+    return (
+        <LeftPaneContainer>
+            <DivUser>
+                <DivTopLeft>
+                    <ImgContainer style={{backgroundColor: "#48A5C3"}} >
+                        <Img src={require("../assets/images/Property 1=Image 22.png")} />
+                    </ImgContainer>
+                    <DivTopContent>
+                        <UserName>Fasalu Rahman</UserName>
+                        <UserDesc>My Account</UserDesc>
+                    </DivTopContent>
+                </DivTopLeft>
+                <DivTopRight>
+                    <ImgContainer style={{border: "1px solid #4d4d4d"}} >
+                        <Img
+                            src={require("../assets/images/Option.svg").default}
+                            style={{width:"30px"}}
+                        />
+                    </ImgContainer>
+                </DivTopRight>
+            </DivUser>
+            <DivSearch>
+                <DivSearchWrapper>
+                    <DivSearchIcon src={require("../assets/images/Music-dashboard-icons-1.svg").default} />
+                    <DivSearchInput
+                        type='text'
+                        placeholder='Search or start a new chat...'
                     />
-                </ImgContainer>
-            </DivTopRight>
-        </DivUser>
-        <DivSearch>
-            <DivSearchWrapper>
-                <DivSearchIcon src={require("../assets/images/Music-dashboard-icons-1.svg").default} />
-                <DivSearchInput
-                    type='text'
-                    placeholder='Search or start a new chat...'
-                />
-            </DivSearchWrapper>
-        </DivSearch>
-        <DivOnline>
-            <DivOnlineTop>
-                <DivOnlineTopHead>Online now</DivOnlineTopHead>
-                <DivOnlineTopMore>
-                    More
-                    <DivOnlineTopMoreIcon src={require("../assets/images/Music-dashboard-icons.svg").default} />
-                </DivOnlineTopMore>
-            </DivOnlineTop>
-            <DivOnlineBottom>
-                <OnlineImageContainer>
-                    <Img src={require("../assets/images/Profile (7).jpg")} />
-                </OnlineImageContainer>
-                <OnlineImageContainer>
-                    <Img src={require("../assets/images/Profile (6).jpg")} />
-                </OnlineImageContainer>
-                <OnlineImageContainer>
-                    <Img src={require("../assets/images/Profile (3).jpg")} />
-                </OnlineImageContainer>
-                <OnlineImageContainer>
-                    <Img src={require("../assets/images/Profile (4).jpg")} />
-                </OnlineImageContainer>
-                <OnlineImageContainer>
-                    <Img src={require("../assets/images/Profile (5).jpg")} />
-                </OnlineImageContainer>
-            </DivOnlineBottom>
-        </DivOnline>
-        <DivChatList>
-            <ChatListHeadContainer>
-                <ChatListHead>Messages</ChatListHead>
-                <ChatListCountBox>
-                    <ChatListCountText>30</ChatListCountText>
-                </ChatListCountBox>
-            </ChatListHeadContainer>
-            <Chat>
-                <ChatLeft>
-                    <ChatImageContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ChatImageContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
-            <Chat>
-                <ChatLeft>
-                    <ImgContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ImgContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
-            <Chat>
-                <ChatLeft>
-                    <ChatImageContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ChatImageContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
-            <Chat>
-                <ChatLeft>
-                    <ImgContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ImgContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
-            <Chat>
-                <ChatLeft>
-                    <ImgContainer
-                        style={{marginRight:"10px"}}
-                    >
-                        <Img
-                            src={require("../assets/images/Profile (10).jpg")}
-                        />
-                    </ImgContainer>
-                    <ChatMiddleContainer>
-                        <ChatName>Kabeer Babu</ChatName>
-                        <LastMsg>Hi, where are you?</LastMsg>
-                    </ChatMiddleContainer>
-                </ChatLeft>
-                <ChatRight>
-                    <LastMsgTick>
-                        <LastMsgTickImg
-                            src={require("../assets/images/grey dots.svg").default}
-                        />
-                    </LastMsgTick>
-                    <LastMsgTime>10:30 am</LastMsgTime>
-                </ChatRight>
-            </Chat>
-        </DivChatList>
-    </LeftPaneContainer>
+                </DivSearchWrapper>
+            </DivSearch>
+            <DivOnline>
+                <DivOnlineTop>
+                    <DivOnlineTopHead>Online now</DivOnlineTopHead>
+                    <DivOnlineTopMore>
+                        More
+                        <DivOnlineTopMoreIcon src={require("../assets/images/Music-dashboard-icons.svg").default} />
+                    </DivOnlineTopMore>
+                </DivOnlineTop>
+                <DivOnlineBottom>
+                    <OnlineImageContainer>
+                        <Img src={require("../assets/images/Profile (7).jpg")} />
+                    </OnlineImageContainer>
+                    <OnlineImageContainer>
+                        <Img src={require("../assets/images/Profile (6).jpg")} />
+                    </OnlineImageContainer>
+                    <OnlineImageContainer>
+                        <Img src={require("../assets/images/Profile (3).jpg")} />
+                    </OnlineImageContainer>
+                    <OnlineImageContainer>
+                        <Img src={require("../assets/images/Profile (4).jpg")} />
+                    </OnlineImageContainer>
+                    <OnlineImageContainer>
+                        <Img src={require("../assets/images/Profile (5).jpg")} />
+                    </OnlineImageContainer>
+                </DivOnlineBottom>
+            </DivOnline>
+            <DivChatList>
+                <ChatListHeadContainer>
+                    <ChatListHead>Messages</ChatListHead>
+                    <ChatListCountBox>
+                        <ChatListCountText>30</ChatListCountText>
+                    </ChatListCountBox>
+                </ChatListHeadContainer>
+                <Link to={"/chat/1"}>
+                    <Chat>
+                        <ChatLeft>
+                            <ChatImageContainer
+                                style={{marginRight:"10px"}}
+                            >
+                                <Img
+                                    src={require("../assets/images/Profile (11).jpg")}
+                                />
+                            </ChatImageContainer>
+                            <ChatMiddleContainer>
+                                <ChatName>Michael</ChatName>
+                                <LastMsg>Hello</LastMsg>
+                            </ChatMiddleContainer>
+                        </ChatLeft>
+                        <ChatRight>
+                            <LastMsgTick>
+                                <LastMsgTickImg
+                                    src={require("../assets/images/grey dots.svg").default}
+                                />
+                            </LastMsgTick>
+                            <LastMsgTime>12:10 pm</LastMsgTime>
+                        </ChatRight>
+                </Chat>
+            </Link>
+            </DivChatList>
+        </LeftPaneContainer>
   )
 }
 
@@ -192,9 +103,6 @@ const LeftPaneContainer = styled.div`
     height: 100vh;
     border-left: 1px solid #4d4d4d;
     border-right: 1px solid #4d4d4d;
-`
-const DivTop = styled.div`
-    
 `
 const DivUser = styled.div`
     display: flex;
