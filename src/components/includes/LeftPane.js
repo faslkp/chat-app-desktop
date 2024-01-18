@@ -1,13 +1,46 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-function LeftPane() {
+function LeftPane({ updateSetShowHome, chatList, renderConversations, userProfile }) {
+    const renderChats = () => {
+        return chatList.map((chat, index) => (
+            <Chat
+                key={index}
+                onClick={() => {
+                    renderConversations(chat.id)
+                    updateSetShowHome(false)
+                }}
+            >
+                <ChatLeft>
+                    <ChatImageContainer
+                        style={{ marginRight: "10px" }}
+                    >
+                        <Img
+                            src={require("../assets/images/Profile (11).jpg")}
+                        />
+                    </ChatImageContainer>
+                    <ChatMiddleContainer>
+                        <ChatName>{chat.name}</ChatName>
+                        <LastMsg>Hello</LastMsg>
+                    </ChatMiddleContainer>
+                </ChatLeft>
+                <ChatRight>
+                    <LastMsgTick>
+                        <LastMsgTickImg
+                            src={require("../assets/images/grey dots.svg").default}
+                        />
+                    </LastMsgTick>
+                    <LastMsgTime>12:10 pm</LastMsgTime>
+                </ChatRight>
+            </Chat>
+        ));
+    };
+
     return (
         <LeftPaneContainer>
             <DivUser>
                 <DivTopLeft>
-                    <ImgContainer style={{backgroundColor: "#48A5C3"}} >
+                    <ImgContainer style={{ backgroundColor: "#48A5C3" }} >
                         <Img src={require("../assets/images/Property 1=Image 22.png")} />
                     </ImgContainer>
                     <DivTopContent>
@@ -16,10 +49,10 @@ function LeftPane() {
                     </DivTopContent>
                 </DivTopLeft>
                 <DivTopRight>
-                    <ImgContainer style={{border: "1px solid #4d4d4d"}} >
+                    <ImgContainer style={{ border: "1px solid #4d4d4d" }} >
                         <Img
                             src={require("../assets/images/Option.svg").default}
-                            style={{width:"30px"}}
+                            style={{ width: "30px" }}
                         />
                     </ImgContainer>
                 </DivTopRight>
@@ -66,34 +99,10 @@ function LeftPane() {
                         <ChatListCountText>30</ChatListCountText>
                     </ChatListCountBox>
                 </ChatListHeadContainer>
-                <Link to={"/chat/1"}>
-                    <Chat>
-                        <ChatLeft>
-                            <ChatImageContainer
-                                style={{marginRight:"10px"}}
-                            >
-                                <Img
-                                    src={require("../assets/images/Profile (11).jpg")}
-                                />
-                            </ChatImageContainer>
-                            <ChatMiddleContainer>
-                                <ChatName>Michael</ChatName>
-                                <LastMsg>Hello</LastMsg>
-                            </ChatMiddleContainer>
-                        </ChatLeft>
-                        <ChatRight>
-                            <LastMsgTick>
-                                <LastMsgTickImg
-                                    src={require("../assets/images/grey dots.svg").default}
-                                />
-                            </LastMsgTick>
-                            <LastMsgTime>12:10 pm</LastMsgTime>
-                        </ChatRight>
-                </Chat>
-            </Link>
+                {renderChats()}
             </DivChatList>
         </LeftPaneContainer>
-  )
+    )
 }
 
 const LeftPaneContainer = styled.div`
@@ -257,6 +266,7 @@ const Chat = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    cursor: pointer;
     &:last-child {
         margin-bottom: 0;
     }

@@ -1,13 +1,85 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-function ChatPane() {
-  return (
-    <ChatPaneWrapper>
-        <ChatPaneTop>
-            <Link to={"/chat/1/profile"}>
-                <ChatPaneTopLeft>
+function ChatPane({ updateSetShowProfile, conversation_list, user_profile }) {
+    
+    const renderConversations = () => {
+        console.log("list", conversation_list)
+        // return conversation_list.map((message) => (
+        //     <>
+        //         {message.sender===user_profile.id ? (
+        //             <MessageOut>
+        //             <MessageOutTop>
+        //                 <MessageOutContent>
+        //                     I'm fine da!
+        //                 </MessageOutContent>
+        //             </MessageOutTop>
+        //             <MessageOutBottom>
+        //                 <MessageOutSentStatusBox>
+        //                     <MessageOutSentStatusImg
+        //                         src={require("../assets/images/Blue dots.svg").default}
+        //                     />
+        //                 </MessageOutSentStatusBox>
+        //                 <MessageOutSentTime>12:25 pm</MessageOutSentTime>
+        //             </MessageOutBottom>
+        //             </MessageOut>
+        //         ) : (
+        //             <MessageIn>
+        //             <MessageInLeft>
+        //                 <MessageInLeftTop>
+        //                     <MessageInContent>
+        //                         Hello, dude, how you?
+        //                     </MessageInContent>
+        //                 </MessageInLeftTop>
+        //                 <MessageInLeftBottom>
+        //                     <MessageInLeftBottomLeft>
+        //                         <MessageInLeftBottomLeftImgBox>
+        //                             <MessageInLeftBottomLeftImg
+        //                                 src={require("../assets/images/emojione_thumbs-up.svg").default}
+        //                             />
+        //                         </MessageInLeftBottomLeftImgBox>
+        //                         <MessageInLeftBottomLeftImgBox>
+        //                             <MessageInLeftBottomLeftImg
+        //                                 src={require("../assets/images/Group 3465375.svg").default}
+        //                             />
+        //                         </MessageInLeftBottomLeftImgBox>
+        //                     </MessageInLeftBottomLeft>
+        //                     <MessageInLeftBottomRight>
+        //                         <MessageInTime>12:15 pm</MessageInTime>
+        //                     </MessageInLeftBottomRight>
+        //                 </MessageInLeftBottom>
+        //             </MessageInLeft>
+        //             <MessageInRight>
+        //                 <MessageInRightIconBox>
+        //                     <MessageInRightIconImg
+        //                         src={require("../assets/images/Property 1=white share.svg").default}
+        //                     />
+        //                 </MessageInRightIconBox>
+        //                 <MessageInRightIconBox>
+        //                     <MessageInRightIconImg
+        //                         src={require("../assets/images/Group 3465392.svg").default}
+        //                     />
+        //                 </MessageInRightIconBox>
+        //                 <MessageInRightIconBox>
+        //                     <MessageInRightIconImg
+        //                         src={require("../assets/images/White Option.svg").default}
+        //                     />
+        //                 </MessageInRightIconBox>
+        //             </MessageInRight>
+        //             </MessageIn>
+        //         )}
+        //     </>
+        // ))
+    }
+
+    return (
+        <ChatPaneWrapper>
+            <ChatPaneTop>
+                <ChatPaneTopLeft
+                    onClick={() => {
+                        updateSetShowProfile(true)
+                    }}
+                >
                     <ChatPaneTopLeftImgBox>
                         <ChatPaneTopLeftImg
                             src={require("../assets/images/Profile (11).jpg")}
@@ -18,112 +90,114 @@ function ChatPane() {
                         <ChatBuddyStatus>Typing...</ChatBuddyStatus>
                     </ChatPaneTopLeftMidBox>
                 </ChatPaneTopLeft>
-            </Link>
-            <ChatPaneTopRight>
-                <ChatPaneTopRightImgBox>
-                    <ChatPaneTopRightImg
-                        src={require("../assets/images/Property 1=phone.svg").default}
-                    />
-                </ChatPaneTopRightImgBox>
-                <ChatPaneTopRightImgBox>
-                    <ChatPaneTopRightImg
-                        src={require("../assets/images/Property 1=video-camera.svg").default}
-                    />
-                </ChatPaneTopRightImgBox>
-                <Link to={"/chat/1/profile"}>
+                <ChatPaneTopRight>
                     <ChatPaneTopRightImgBox>
+                        <ChatPaneTopRightImg
+                            src={require("../assets/images/Property 1=phone.svg").default}
+                        />
+                    </ChatPaneTopRightImgBox>
+                    <ChatPaneTopRightImgBox>
+                        <ChatPaneTopRightImg
+                            src={require("../assets/images/Property 1=video-camera.svg").default}
+                        />
+                    </ChatPaneTopRightImgBox>
+                    <ChatPaneTopRightImgBox
+                        onClick={() => {
+                            updateSetShowProfile(true)
+                        }}
+                    >
                         <ChatPaneTopRightImg
                             src={require("../assets/images/Option.svg").default}
                         />
                     </ChatPaneTopRightImgBox>
-                </Link>
-            </ChatPaneTopRight>
-        </ChatPaneTop>
-        <ChatPaneMiddle>
-            <MessageIn>
-                <MessageInLeft>
-                    <MessageInLeftTop>
-                        <MessageInContent>
-                            Hello, dude, how you?
-                        </MessageInContent>
-                    </MessageInLeftTop>
-                    <MessageInLeftBottom>
-                        <MessageInLeftBottomLeft>
-                            <MessageInLeftBottomLeftImgBox>
-                                <MessageInLeftBottomLeftImg
-                                    src={require("../assets/images/emojione_thumbs-up.svg").default}
-                                />
-                            </MessageInLeftBottomLeftImgBox>
-                            <MessageInLeftBottomLeftImgBox>
-                                <MessageInLeftBottomLeftImg
-                                    src={require("../assets/images/Group 3465375.svg").default}
-                                />
-                            </MessageInLeftBottomLeftImgBox>
-                        </MessageInLeftBottomLeft>
-                        <MessageInLeftBottomRight>
-                            <MessageInTime>12:15 pm</MessageInTime>
-                        </MessageInLeftBottomRight>
-                    </MessageInLeftBottom>
-                </MessageInLeft>
-                <MessageInRight>
-                    <MessageInRightIconBox>
-                        <MessageInRightIconImg
-                            src={require("../assets/images/Property 1=white share.svg").default}
-                        />
-                    </MessageInRightIconBox>
-                    <MessageInRightIconBox>
-                        <MessageInRightIconImg
-                            src={require("../assets/images/Group 3465392.svg").default}
-                        />
-                    </MessageInRightIconBox>
-                    <MessageInRightIconBox>
-                        <MessageInRightIconImg
-                            src={require("../assets/images/White Option.svg").default}
-                        />
-                    </MessageInRightIconBox>
-                </MessageInRight>
-            </MessageIn>
-            <MessageOut>
-                <MessageOutTop>
-                    <MessageOutContent>
-                        I'm fine da!
-                    </MessageOutContent>
-                </MessageOutTop>
-                <MessageOutBottom>
-                    <MessageOutSentStatusBox>
-                        <MessageOutSentStatusImg
-                            src={require("../assets/images/Blue dots.svg").default}
-                        />
-                    </MessageOutSentStatusBox>
-                    <MessageOutSentTime>12:25 pm</MessageOutSentTime>
-                </MessageOutBottom>
-            </MessageOut>
-        </ChatPaneMiddle>
-        <ChatPaneBottom>
-            <AttachIconContainer>
-                <AttachIconImg
-                    src={require("../assets/images/attachment 2.svg").default}
-                />
-            </AttachIconContainer>
-            <ChatInputContainer>
-                <ChatInput
-                    type='text'
-                    placeholder='Message'
-                />
-                <EmojiButton>
-                    <EmojiButtonImg
-                        src={require("../assets/images/Group 3465380.svg").default}
+                </ChatPaneTopRight>
+            </ChatPaneTop>
+            <ChatPaneMiddle>
+                {renderConversations()}
+                {/* <MessageIn>
+                    <MessageInLeft>
+                        <MessageInLeftTop>
+                            <MessageInContent>
+                                Hello, dude, how you?
+                            </MessageInContent>
+                        </MessageInLeftTop>
+                        <MessageInLeftBottom>
+                            <MessageInLeftBottomLeft>
+                                <MessageInLeftBottomLeftImgBox>
+                                    <MessageInLeftBottomLeftImg
+                                        src={require("../assets/images/emojione_thumbs-up.svg").default}
+                                    />
+                                </MessageInLeftBottomLeftImgBox>
+                                <MessageInLeftBottomLeftImgBox>
+                                    <MessageInLeftBottomLeftImg
+                                        src={require("../assets/images/Group 3465375.svg").default}
+                                    />
+                                </MessageInLeftBottomLeftImgBox>
+                            </MessageInLeftBottomLeft>
+                            <MessageInLeftBottomRight>
+                                <MessageInTime>12:15 pm</MessageInTime>
+                            </MessageInLeftBottomRight>
+                        </MessageInLeftBottom>
+                    </MessageInLeft>
+                    <MessageInRight>
+                        <MessageInRightIconBox>
+                            <MessageInRightIconImg
+                                src={require("../assets/images/Property 1=white share.svg").default}
+                            />
+                        </MessageInRightIconBox>
+                        <MessageInRightIconBox>
+                            <MessageInRightIconImg
+                                src={require("../assets/images/Group 3465392.svg").default}
+                            />
+                        </MessageInRightIconBox>
+                        <MessageInRightIconBox>
+                            <MessageInRightIconImg
+                                src={require("../assets/images/White Option.svg").default}
+                            />
+                        </MessageInRightIconBox>
+                    </MessageInRight>
+                </MessageIn>
+                <MessageOut>
+                    <MessageOutTop>
+                        <MessageOutContent>
+                            I'm fine da!
+                        </MessageOutContent>
+                    </MessageOutTop>
+                    <MessageOutBottom>
+                        <MessageOutSentStatusBox>
+                            <MessageOutSentStatusImg
+                                src={require("../assets/images/Blue dots.svg").default}
+                            />
+                        </MessageOutSentStatusBox>
+                        <MessageOutSentTime>12:25 pm</MessageOutSentTime>
+                    </MessageOutBottom>
+                </MessageOut> */}
+            </ChatPaneMiddle>
+            <ChatPaneBottom>
+                <AttachIconContainer>
+                    <AttachIconImg
+                        src={require("../assets/images/attachment 2.svg").default}
                     />
-                </EmojiButton>
-            </ChatInputContainer>
-            <VoiceButton>
-                <VoiceButtonImg
-                    src={require("../assets/images/Group 3465393.svg").default}
-                />
-            </VoiceButton>
-        </ChatPaneBottom>
-    </ChatPaneWrapper>
-  )
+                </AttachIconContainer>
+                <ChatInputContainer>
+                    <ChatInput
+                        type='text'
+                        placeholder='Message'
+                    />
+                    <EmojiButton>
+                        <EmojiButtonImg
+                            src={require("../assets/images/Group 3465380.svg").default}
+                        />
+                    </EmojiButton>
+                </ChatInputContainer>
+                <VoiceButton>
+                    <VoiceButtonImg
+                        src={require("../assets/images/Group 3465393.svg").default}
+                    />
+                </VoiceButton>
+            </ChatPaneBottom>
+        </ChatPaneWrapper>
+    )
 }
 
 const ChatPaneWrapper = styled.div`
@@ -145,6 +219,7 @@ const ChatPaneTop = styled.div`
 const ChatPaneTopLeft = styled.div`
     display: flex;
     align-items: center;
+    cursor: pointer;
 `
 const ChatPaneTopLeftImgBox = styled.div`
     width: 50px;
@@ -187,6 +262,7 @@ const ChatPaneTopRightImgBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     &:last-child {
         margin-right: 0;
     }

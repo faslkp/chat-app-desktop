@@ -1,103 +1,105 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-function RightPane() {
-  return (
-    <LeftPaneContainer>
-        <DivTop>
-            <DivTopLeft>Contact details</DivTopLeft>
-            <Link to={"/chat/1"}>
-                <DivTopRight>
+function RightPane({ updateSetShowProfile }) {
+
+    return (
+        <LeftPaneContainer>
+            <DivTop>
+                <DivTopLeft>Contact details</DivTopLeft>
+                <DivTopRight
+                    onClick={() => {
+                        updateSetShowProfile(false)
+                    }}
+                >
                     <DivTopRightImg
                         src={require("../assets/images/Vector.svg").default}
                     />
                 </DivTopRight>
-            </Link>
-        </DivTop>
-        <DivBuddy>
-            <DpImgContainer style={{backgroundColor: "#48A5C3"}} >
-                <DpImg src={require("../assets/images/Profile (11).jpg")} />
-            </DpImgContainer>
-            <BuddyName>Fasalu Rahman</BuddyName>
-            <BuddyStatus>Online</BuddyStatus>
-        </DivBuddy>
-        <DivMedia>
-            <DivMediaTop>
-                <DivMediaTopLeft>
-                    <DivMediaTopLeftHead>Media</DivMediaTopLeftHead>
-                    <DivMediaTopLeftDesc>14 pictures</DivMediaTopLeftDesc>
-                </DivMediaTopLeft>
-                <DivMediaTopRight>View all</DivMediaTopRight>
-            </DivMediaTop>
-            <DivMediaBottom>
-                <DivMediaImgBox>
-                    <DivMediaImg
-                        src={require("../assets/images/image_processing20220225-29217-hv4dvv.jpg")}
-                    />
-                </DivMediaImgBox>
-                <DivMediaImgBox>
-                    <DivMediaImg
-                        src={require("../assets/images/image_processing20220305-7813-19y4c1j.jpg")}
-                    />
-                </DivMediaImgBox>
-                <DivMediaImgBox>
-                    <DivMediaImg
-                        src={require("../assets/images/image_processing20220225-29217-hv4dvv.jpg")}
-                    />
-                </DivMediaImgBox>
-                <DivMediaMore>
-                    <DivMediaMoreText>+11</DivMediaMoreText>
-                </DivMediaMore>
-            </DivMediaBottom>
-        </DivMedia>
-        <DivFiles>
-            <DivFilesTop>
-                <DivFilesTopLeft>
-                    <DivFilesTopLeftHead>Files</DivFilesTopLeftHead>
-                    <DivFilesTopLeftDesc>12 files</DivFilesTopLeftDesc>
-                </DivFilesTopLeft>
-                <DivFilesTopRight>View all</DivFilesTopRight>
-            </DivFilesTop>
-            <DivFilesBottom>
-                <DivFileWrapper>
-                    <DivFile>
-                        <DivFileTop>
-                            <DivFileIconBox>
-                                <DivFileIconImg
-                                    src={require("../assets/images/Component 96.svg").default}
-                                />
-                            </DivFileIconBox>
-                            <DivFileName>Brief Project Real Es...</DivFileName>
-                        </DivFileTop>
-                        <DivFileBottom>
-                            <DivFileType>DOCS</DivFileType>
-                            <DivFileSize>12 KB</DivFileSize>
-                        </DivFileBottom>
-                    </DivFile>
-                    <DivFileSentTime>12:10 pm</DivFileSentTime>
-                </DivFileWrapper>
-                <DivFileWrapper>
-                    <DivFile>
-                        <DivFileTop>
-                            <DivFileIconBox>
-                                <DivFileIconImg
-                                    src={require("../assets/images/Component 96.svg").default}
-                                />
-                            </DivFileIconBox>
-                            <DivFileName>Brief Project Real Es...</DivFileName>
-                        </DivFileTop>
-                        <DivFileBottom>
-                            <DivFileType>DOCS</DivFileType>
-                            <DivFileSize>12 KB</DivFileSize>
-                        </DivFileBottom>
-                    </DivFile>
-                    <DivFileSentTime>12:10 pm</DivFileSentTime>
-                </DivFileWrapper>
-            </DivFilesBottom>
-        </DivFiles>
-    </LeftPaneContainer>
-  )
+            </DivTop>
+            <DivBuddy>
+                <DpImgContainer style={{backgroundColor: "#48A5C3"}} >
+                    <DpImg src={require("../assets/images/Profile (11).jpg")} />
+                </DpImgContainer>
+                <BuddyName>Fasalu Rahman</BuddyName>
+                <BuddyStatus>Online</BuddyStatus>
+            </DivBuddy>
+            <DivMedia>
+                <DivMediaTop>
+                    <DivMediaTopLeft>
+                        <DivMediaTopLeftHead>Media</DivMediaTopLeftHead>
+                        <DivMediaTopLeftDesc>14 pictures</DivMediaTopLeftDesc>
+                    </DivMediaTopLeft>
+                    <DivMediaTopRight>View all</DivMediaTopRight>
+                </DivMediaTop>
+                <DivMediaBottom>
+                    <DivMediaImgBox>
+                        <DivMediaImg
+                            src={require("../assets/images/image_processing20220225-29217-hv4dvv.jpg")}
+                        />
+                    </DivMediaImgBox>
+                    <DivMediaImgBox>
+                        <DivMediaImg
+                            src={require("../assets/images/image_processing20220305-7813-19y4c1j.jpg")}
+                        />
+                    </DivMediaImgBox>
+                    <DivMediaImgBox>
+                        <DivMediaImg
+                            src={require("../assets/images/image_processing20220225-29217-hv4dvv.jpg")}
+                        />
+                    </DivMediaImgBox>
+                    <DivMediaMore>
+                        <DivMediaMoreText>+11</DivMediaMoreText>
+                    </DivMediaMore>
+                </DivMediaBottom>
+            </DivMedia>
+            <DivFiles>
+                <DivFilesTop>
+                    <DivFilesTopLeft>
+                        <DivFilesTopLeftHead>Files</DivFilesTopLeftHead>
+                        <DivFilesTopLeftDesc>12 files</DivFilesTopLeftDesc>
+                    </DivFilesTopLeft>
+                    <DivFilesTopRight>View all</DivFilesTopRight>
+                </DivFilesTop>
+                <DivFilesBottom>
+                    <DivFileWrapper>
+                        <DivFile>
+                            <DivFileTop>
+                                <DivFileIconBox>
+                                    <DivFileIconImg
+                                        src={require("../assets/images/Component 96.svg").default}
+                                    />
+                                </DivFileIconBox>
+                                <DivFileName>Brief Project Real Es...</DivFileName>
+                            </DivFileTop>
+                            <DivFileBottom>
+                                <DivFileType>DOCS</DivFileType>
+                                <DivFileSize>12 KB</DivFileSize>
+                            </DivFileBottom>
+                        </DivFile>
+                        <DivFileSentTime>12:10 pm</DivFileSentTime>
+                    </DivFileWrapper>
+                    <DivFileWrapper>
+                        <DivFile>
+                            <DivFileTop>
+                                <DivFileIconBox>
+                                    <DivFileIconImg
+                                        src={require("../assets/images/Component 96.svg").default}
+                                    />
+                                </DivFileIconBox>
+                                <DivFileName>Brief Project Real Es...</DivFileName>
+                            </DivFileTop>
+                            <DivFileBottom>
+                                <DivFileType>DOCS</DivFileType>
+                                <DivFileSize>12 KB</DivFileSize>
+                            </DivFileBottom>
+                        </DivFile>
+                        <DivFileSentTime>12:10 pm</DivFileSentTime>
+                    </DivFileWrapper>
+                </DivFilesBottom>
+            </DivFiles>
+        </LeftPaneContainer>
+    )
 }
 
 const LeftPaneContainer = styled.div`
@@ -132,6 +134,7 @@ const DivTopRight = styled.div`
     align-items: center;
     justify-content: center;
     margin-right: 30px;
+    cursor: pointer;
 `
 const DivTopRightImg = styled.img`
     display: block;
