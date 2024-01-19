@@ -1,75 +1,76 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function ChatPane({ updateSetShowProfile, conversation_list, user_profile }) {
-    
+function ChatPane({ updateSetShowProfile, conversation_list, userProfile }) {
+
     const renderConversations = () => {
-        console.log("list", conversation_list)
-        // return conversation_list.map((message) => (
-        //     <>
-        //         {message.sender===user_profile.id ? (
-        //             <MessageOut>
-        //             <MessageOutTop>
-        //                 <MessageOutContent>
-        //                     I'm fine da!
-        //                 </MessageOutContent>
-        //             </MessageOutTop>
-        //             <MessageOutBottom>
-        //                 <MessageOutSentStatusBox>
-        //                     <MessageOutSentStatusImg
-        //                         src={require("../assets/images/Blue dots.svg").default}
-        //                     />
-        //                 </MessageOutSentStatusBox>
-        //                 <MessageOutSentTime>12:25 pm</MessageOutSentTime>
-        //             </MessageOutBottom>
-        //             </MessageOut>
-        //         ) : (
-        //             <MessageIn>
-        //             <MessageInLeft>
-        //                 <MessageInLeftTop>
-        //                     <MessageInContent>
-        //                         Hello, dude, how you?
-        //                     </MessageInContent>
-        //                 </MessageInLeftTop>
-        //                 <MessageInLeftBottom>
-        //                     <MessageInLeftBottomLeft>
-        //                         <MessageInLeftBottomLeftImgBox>
-        //                             <MessageInLeftBottomLeftImg
-        //                                 src={require("../assets/images/emojione_thumbs-up.svg").default}
-        //                             />
-        //                         </MessageInLeftBottomLeftImgBox>
-        //                         <MessageInLeftBottomLeftImgBox>
-        //                             <MessageInLeftBottomLeftImg
-        //                                 src={require("../assets/images/Group 3465375.svg").default}
-        //                             />
-        //                         </MessageInLeftBottomLeftImgBox>
-        //                     </MessageInLeftBottomLeft>
-        //                     <MessageInLeftBottomRight>
-        //                         <MessageInTime>12:15 pm</MessageInTime>
-        //                     </MessageInLeftBottomRight>
-        //                 </MessageInLeftBottom>
-        //             </MessageInLeft>
-        //             <MessageInRight>
-        //                 <MessageInRightIconBox>
-        //                     <MessageInRightIconImg
-        //                         src={require("../assets/images/Property 1=white share.svg").default}
-        //                     />
-        //                 </MessageInRightIconBox>
-        //                 <MessageInRightIconBox>
-        //                     <MessageInRightIconImg
-        //                         src={require("../assets/images/Group 3465392.svg").default}
-        //                     />
-        //                 </MessageInRightIconBox>
-        //                 <MessageInRightIconBox>
-        //                     <MessageInRightIconImg
-        //                         src={require("../assets/images/White Option.svg").default}
-        //                     />
-        //                 </MessageInRightIconBox>
-        //             </MessageInRight>
-        //             </MessageIn>
-        //         )}
-        //     </>
-        // ))
+        return conversation_list.map((message) => {
+            if (message.user_id === userProfile.id) {
+                return (
+                    <MessageOut key={message.id}>
+                        <MessageOutTop>
+                            <MessageOutContent>
+                                {message.message_text}
+                            </MessageOutContent>
+                        </MessageOutTop>
+                        <MessageOutBottom>
+                            <MessageOutSentStatusBox>
+                                <MessageOutSentStatusImg
+                                    src={require("../assets/images/Blue dots.svg").default}
+                                />
+                            </MessageOutSentStatusBox>
+                            <MessageOutSentTime>{message.sent_time}</MessageOutSentTime>
+                        </MessageOutBottom>
+                    </MessageOut>
+                )
+            } else {
+                return (
+                    <MessageIn key={message.id}>
+                        <MessageInLeft>
+                            <MessageInLeftTop>
+                                <MessageInContent>
+                                    {message.message_text}
+                                </MessageInContent>
+                            </MessageInLeftTop>
+                            <MessageInLeftBottom>
+                                <MessageInLeftBottomLeft>
+                                    <MessageInLeftBottomLeftImgBox>
+                                        <MessageInLeftBottomLeftImg
+                                            src={require("../assets/images/emojione_thumbs-up.svg").default}
+                                        />
+                                    </MessageInLeftBottomLeftImgBox>
+                                    <MessageInLeftBottomLeftImgBox>
+                                        <MessageInLeftBottomLeftImg
+                                            src={require("../assets/images/Group 3465375.svg").default}
+                                        />
+                                    </MessageInLeftBottomLeftImgBox>
+                                </MessageInLeftBottomLeft>
+                                <MessageInLeftBottomRight>
+                                    <MessageInTime>{message.sent_time}</MessageInTime>
+                                </MessageInLeftBottomRight>
+                            </MessageInLeftBottom>
+                        </MessageInLeft>
+                        <MessageInRight>
+                            <MessageInRightIconBox>
+                                <MessageInRightIconImg
+                                    src={require("../assets/images/Property 1=white share.svg").default}
+                                />
+                            </MessageInRightIconBox>
+                            <MessageInRightIconBox>
+                                <MessageInRightIconImg
+                                    src={require("../assets/images/Group 3465392.svg").default}
+                                />
+                            </MessageInRightIconBox>
+                            <MessageInRightIconBox>
+                                <MessageInRightIconImg
+                                    src={require("../assets/images/White Option.svg").default}
+                                />
+                            </MessageInRightIconBox>
+                        </MessageInRight>
+                    </MessageIn>
+                )
+            }
+        })
     }
 
     return (
@@ -114,64 +115,6 @@ function ChatPane({ updateSetShowProfile, conversation_list, user_profile }) {
             </ChatPaneTop>
             <ChatPaneMiddle>
                 {renderConversations()}
-                {/* <MessageIn>
-                    <MessageInLeft>
-                        <MessageInLeftTop>
-                            <MessageInContent>
-                                Hello, dude, how you?
-                            </MessageInContent>
-                        </MessageInLeftTop>
-                        <MessageInLeftBottom>
-                            <MessageInLeftBottomLeft>
-                                <MessageInLeftBottomLeftImgBox>
-                                    <MessageInLeftBottomLeftImg
-                                        src={require("../assets/images/emojione_thumbs-up.svg").default}
-                                    />
-                                </MessageInLeftBottomLeftImgBox>
-                                <MessageInLeftBottomLeftImgBox>
-                                    <MessageInLeftBottomLeftImg
-                                        src={require("../assets/images/Group 3465375.svg").default}
-                                    />
-                                </MessageInLeftBottomLeftImgBox>
-                            </MessageInLeftBottomLeft>
-                            <MessageInLeftBottomRight>
-                                <MessageInTime>12:15 pm</MessageInTime>
-                            </MessageInLeftBottomRight>
-                        </MessageInLeftBottom>
-                    </MessageInLeft>
-                    <MessageInRight>
-                        <MessageInRightIconBox>
-                            <MessageInRightIconImg
-                                src={require("../assets/images/Property 1=white share.svg").default}
-                            />
-                        </MessageInRightIconBox>
-                        <MessageInRightIconBox>
-                            <MessageInRightIconImg
-                                src={require("../assets/images/Group 3465392.svg").default}
-                            />
-                        </MessageInRightIconBox>
-                        <MessageInRightIconBox>
-                            <MessageInRightIconImg
-                                src={require("../assets/images/White Option.svg").default}
-                            />
-                        </MessageInRightIconBox>
-                    </MessageInRight>
-                </MessageIn>
-                <MessageOut>
-                    <MessageOutTop>
-                        <MessageOutContent>
-                            I'm fine da!
-                        </MessageOutContent>
-                    </MessageOutTop>
-                    <MessageOutBottom>
-                        <MessageOutSentStatusBox>
-                            <MessageOutSentStatusImg
-                                src={require("../assets/images/Blue dots.svg").default}
-                            />
-                        </MessageOutSentStatusBox>
-                        <MessageOutSentTime>12:25 pm</MessageOutSentTime>
-                    </MessageOutBottom>
-                </MessageOut> */}
             </ChatPaneMiddle>
             <ChatPaneBottom>
                 <AttachIconContainer>

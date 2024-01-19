@@ -16,13 +16,14 @@ function Chat() {
         {
             id:1,
             chat_with: {
-                id:10,
+                user_id:10,
                 name: "Fasalu",
                 image: ""
             },
             conversation: [
                 {
-                    sender: 10,
+                    id:5,
+                    user_id: 10,
                     message_text: "Hi how are you?",
                     has_attachement: false,
                     attachment:"",
@@ -32,8 +33,31 @@ function Chat() {
 
                 },
                 {
-                    sender: 20,
-                    message_text: "Fine da",
+                    id:6,
+                    user_id: 20,
+                    message_text: "Fine da. How u?",
+                    has_attachement: false,
+                    attachment:"",
+                    sent_time: "10:50 am",
+                    is_sent: true,
+                    is_delivered: true,
+
+                },
+                {
+                    id:7,
+                    user_id: 10,
+                    message_text: "when will you reach at school?",
+                    has_attachement: false,
+                    attachment:"",
+                    sent_time: "10:50 am",
+                    is_sent: true,
+                    is_delivered: true,
+
+                },
+                {
+                    id:8,
+                    user_id: 20,
+                    message_text: "I will try to be there at eve.",
                     has_attachement: false,
                     attachment:"",
                     sent_time: "10:50 am",
@@ -46,14 +70,15 @@ function Chat() {
         {
             id:2,
             chat_with: {
-                id:11,
+                user_id:11,
                 name: "Rashi",
                 image: ""
             },
             conversation: [
                 {
-                    sender: 11,
-                    message_text: "Hi how are you?",
+                    id:3,
+                    user_id: 11,
+                    message_text: "Hello",
                     has_attachement: false,
                     attachment:"",
                     sent_time: "10:45 am",
@@ -62,11 +87,23 @@ function Chat() {
 
                 },
                 {
-                    sender: 20,
-                    message_text: "Fine da",
+                    id:4,
+                    user_id: 20,
+                    message_text: "Hi,",
                     has_attachement: false,
                     attachment:"",
                     sent_time: "10:50 am",
+                    is_sent: true,
+                    is_delivered: true,
+
+                },
+                {
+                    id:9,
+                    user_id: 11,
+                    message_text: "Where are you?",
+                    has_attachement: false,
+                    attachment:"",
+                    sent_time: "10:45 am",
                     is_sent: true,
                     is_delivered: true,
 
@@ -74,16 +111,17 @@ function Chat() {
             ]
         },
         {
-            id:1,
+            id:3,
             chat_with: {
-                id:10,
+                user_id:10,
                 name: "Fami",
                 image: ""
             },
             conversation: [
                 {
-                    sender: 10,
-                    message_text: "Hi how are you?",
+                    id:1,
+                    user_id: 10,
+                    message_text: "Are you there?",
                     has_attachement: false,
                     attachment:"",
                     sent_time: "10:45 am",
@@ -92,11 +130,34 @@ function Chat() {
 
                 },
                 {
-                    sender: 11,
-                    message_text: "Fine da",
+                    id:2,
+                    user_id: 20,
+                    message_text: "yup",
                     has_attachement: false,
                     attachment:"",
                     sent_time: "10:50 am",
+                    is_sent: true,
+                    is_delivered: true,
+
+                },
+                {
+                    id:10,
+                    user_id: 20,
+                    message_text: "When will you reach?",
+                    has_attachement: false,
+                    attachment:"",
+                    sent_time: "10:50 am",
+                    is_sent: true,
+                    is_delivered: true,
+
+                },
+                {
+                    id:11,
+                    user_id: 10,
+                    message_text: "I'm not coming, sorry",
+                    has_attachement: false,
+                    attachment:"",
+                    sent_time: "10:45 am",
                     is_sent: true,
                     is_delivered: true,
 
@@ -115,15 +176,13 @@ function Chat() {
         setShowHome(value)
     }
     const renderConversations = (id) => {
-        console.log(id)
-        let rendered_chat = chats.filter(item => item.id===id)
-        console.log(rendered_chat)
-        let conversations = rendered_chat.conversation
+        let selected_chat = chats.find(item => item.id===id)
+        let conversations = selected_chat.conversation
         setConversations(conversations)
     }
 
     useEffect(()=>{
-        let chat_list = chats.map((chat)=> chat.chat_with)
+        let chat_list = chats.map((chat)=> ({...chat.chat_with,id:chat.id}))
         setChatList(chat_list)
     },[])
 

@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 function LeftPane({ updateSetShowHome, chatList, renderConversations, userProfile }) {
     const renderChats = () => {
-        return chatList.map((chat, index) => (
+        return chatList.map((chat) => (
             <Chat
-                key={index}
+                key={chat.id}
                 onClick={() => {
                     renderConversations(chat.id)
                     updateSetShowHome(false)
