@@ -184,7 +184,7 @@ function Chat() {
     useEffect(()=>{
         let chat_list = chats.map((chat)=> ({...chat.chat_with,id:chat.id}))
         setChatList(chat_list)
-    },[])
+    },[chats])
 
     return (
         <HomeContainer>
